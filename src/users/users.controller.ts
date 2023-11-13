@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+=======
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
+>>>>>>> 9a79630c5f203314d30986506951bf1ec7f397dd
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -7,7 +11,11 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+<<<<<<< HEAD
   @Post(('auth/sign-up'))
+=======
+  @Post('auth/sign-up')
+>>>>>>> 9a79630c5f203314d30986506951bf1ec7f397dd
   @UsePipes(new ValidationPipe())
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
